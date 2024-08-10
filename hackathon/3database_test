@@ -1,0 +1,14 @@
+-- Retrieve all users registered in the last 30 days
+SELECT UserId, Username, Email, Createdate
+FROM Users
+WHERE CreateDate >= NOW() - INTERVAL 30 DAY;
+
+-- Retrieve users within a specific domain e.g. '@example.com'
+SELECT UserId, Username, Email, Createdate
+FROM Users
+WHERE Email LIKE '%@example.com';
+
+-- Update the email of a user with UserId 12345
+UPDATE Users
+SET Email = 'newemail@example.com'
+WHERE UserId = 12345;
